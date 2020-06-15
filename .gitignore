@@ -1,7 +1,7 @@
 #Ignore settings folder
 .settings
-#Ignore target folder
-target
+#Ignore bin folder
+bin
 #Ignore eclipse files
 /.classpath
 /.project
