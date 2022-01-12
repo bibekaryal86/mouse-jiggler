@@ -1,4 +1,4 @@
-package mouseJiggler;
+package mouse.jiggler;
 
 import java.awt.AWTException;
 import java.awt.MouseInfo;
@@ -7,8 +7,8 @@ import java.awt.Robot;
 
 public class App {
 	
-	private static Point currentPoint = null;
-	private static int x = 0, y = 0;
+	private static int x = 0;
+	private static int y = 0;
 
 	public static void main(String[] args) {
 		while (System.currentTimeMillis() > 0L) {
@@ -17,7 +17,7 @@ public class App {
 	}
 	
 	private static void spot() {
-		currentPoint = MouseInfo.getPointerInfo().getLocation();
+		Point currentPoint = MouseInfo.getPointerInfo().getLocation();
 		x = (int) currentPoint.getX();
 		y = (int) currentPoint.getY();
 	}
@@ -29,6 +29,7 @@ public class App {
 			Thread.sleep(1000);
 		} catch (AWTException | InterruptedException e) {
 			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
 	}
 
@@ -39,6 +40,7 @@ public class App {
 			Thread.sleep(1000);
 		} catch (AWTException | InterruptedException e) {
 			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
 	}
 }
