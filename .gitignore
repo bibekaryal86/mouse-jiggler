@@ -1,7 +1,3 @@
-#Ignore settings folder
-.settings
-#Ignore bin folder
-bin
-#Ignore eclipse files
-/.classpath
-/.project
+.idea
+out
+mouse-jiggler.iml
